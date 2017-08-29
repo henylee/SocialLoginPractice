@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
@@ -125,6 +127,21 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
+        ProfileTracker pt = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                if (currentProfile==null) {
+                    Toast.makeText(mContext, "로그아웃 처리 완료.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(mContext, currentProfile.getName()+"님 접속", Toast.LENGTH_SHORT).show();
+
+                    ContextUtil.login(mContext, currentProfile.getId(),"없음", currentProfile.getName(), currentProfile.getProfilePictureUri(500,500).toString());
+                    Intent intent = new Intent(mContext, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
 
         idEdt.setText(ContextUtil.getUserId(mContext));
         pwEdt.setText(ContextUtil.getUserPw(mContext));
