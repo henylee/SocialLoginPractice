@@ -15,11 +15,11 @@ public class GlobalData {
 
     public static void initGlobalData() {
         allUsers.clear();
-        allUsers.add(new User("aaaa", "1111", "갑", "tempURL"));
-        allUsers.add(new User("bbbb", "2222", "을", "tempURL"));
-        allUsers.add(new User("cccc", "3333", "병", "tempURL"));
-        allUsers.add(new User("dddd", "4444", "정", "tempURL"));
-        allUsers.add(new User("eeee", "5555", "무", "tempURL"));
+        allUsers.add(new User("aaaa", "1111", "갑", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/11379757_445206435653478_1894580131_n.jpg"));
+        allUsers.add(new User("bbbb", "2222", "을", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/13731255_1566785090293996_693997005_n.jpg"));
+        allUsers.add(new User("cccc", "3333", "병", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/14.jpg"));
+        allUsers.add(new User("dddd", "4444", "정", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/images+(1).jpg"));
+        allUsers.add(new User("eeee", "5555", "무", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/images.jpg"));
         allUsers.add(new User("ffff", "6666", "기", "tempURL"));
         allUsers.add(new User("gggg", "7777", "경", "tempURL"));
         allUsers.add(new User("hhhh", "8888", "신", "tempURL"));

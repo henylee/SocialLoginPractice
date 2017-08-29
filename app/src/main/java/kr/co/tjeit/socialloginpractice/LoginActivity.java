@@ -55,14 +55,18 @@ public class LoginActivity extends BaseActivity {
                         if (user.getPassword().equals(pwEdt.getText().toString())) {
 //                            아이디도 일치하고, 비밀번호도 일치하므로 로그인 성공 Toast
                             pwOk = true;
+
+                            ContextUtil.setUserId(mContext, idEdt.getText().toString());
+                            ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
+
+//                            사용자 이름 설정
+
                         }
                     }
                 }
                 
                 if (idOk && pwOk) {
 
-                    ContextUtil.setUserId(mContext, idEdt.getText().toString());
-                    ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
 
                     Toast.makeText(mContext, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
 
