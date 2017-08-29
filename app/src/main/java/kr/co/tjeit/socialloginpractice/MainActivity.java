@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import kr.co.tjeit.socialloginpractice.data.User;
+import kr.co.tjeit.socialloginpractice.util.ContextUtil;
 import kr.co.tjeit.socialloginpractice.util.GlobalData;
 
 public class MainActivity extends BaseActivity {
@@ -58,6 +59,10 @@ public class MainActivity extends BaseActivity {
                 }
                 
                 if (idOk && pwOk) {
+
+                    ContextUtil.setUserId(mContext, idEdt.getText().toString());
+                    ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
+
                     Toast.makeText(mContext, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -77,7 +82,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setValues() {
-
+        idEdt.setText(ContextUtil.getUserId(mContext));
+        pwEdt.setText(ContextUtil.getUserPw(mContext));
     }
 
     @Override
