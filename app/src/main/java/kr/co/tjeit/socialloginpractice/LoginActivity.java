@@ -10,7 +10,7 @@ import kr.co.tjeit.socialloginpractice.data.User;
 import kr.co.tjeit.socialloginpractice.util.ContextUtil;
 import kr.co.tjeit.socialloginpractice.util.GlobalData;
 
-public class MainActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 
     private android.widget.EditText idEdt;
     private android.widget.EditText pwEdt;
@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         bindViews();
         setupEvents();
         setValues();
