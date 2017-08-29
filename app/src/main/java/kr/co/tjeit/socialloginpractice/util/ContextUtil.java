@@ -15,6 +15,8 @@ public class ContextUtil {
 //    사용자 아이디 / 비번을 위한 항목명
     private static final String USER_ID = "USER_ID";
     private static final String USER_PW = "USER_PW";
+    private static final String USER_NAME = "USER_NAME";
+    private static final String USER_PROFILE_URL = "USER_PROFILE_URL";
 
     public static void setUserId(Context context, String id) {
         SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
@@ -35,5 +37,29 @@ public class ContextUtil {
         SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         return pref.getString(USER_PW, "");
     }
+
+
+    public static void setUserName(Context context, String input) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        pref.edit().putString(USER_NAME, input).commit();
+    }
+
+    public static String getUserName(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        return pref.getString(USER_NAME, "");
+    }
+
+
+    public static void setUserProfileUrl(Context context, String input) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        pref.edit().putString(USER_PROFILE_URL, input).commit();
+    }
+
+    public static String getUserProfileUrl(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+        return pref.getString(USER_PROFILE_URL, "");
+    }
+
+
 
 }

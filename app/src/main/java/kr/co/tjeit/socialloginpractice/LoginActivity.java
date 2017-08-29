@@ -1,5 +1,6 @@
 package kr.co.tjeit.socialloginpractice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,11 @@ public class LoginActivity extends BaseActivity {
                     ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
 
                     Toast.makeText(mContext, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(mContext, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
                 }
                 else {
                     if (idOk) {

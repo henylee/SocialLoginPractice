@@ -15,16 +15,16 @@ public class GlobalData {
 
     public static void initGlobalData() {
         allUsers.clear();
-        allUsers.add(new User("aaaa", "1111"));
-        allUsers.add(new User("bbbb", "2222"));
-        allUsers.add(new User("cccc", "3333"));
-        allUsers.add(new User("dddd", "4444"));
-        allUsers.add(new User("eeee", "5555"));
-        allUsers.add(new User("ffff", "6666"));
-        allUsers.add(new User("gggg", "7777"));
-        allUsers.add(new User("hhhh", "8888"));
-        allUsers.add(new User("iiii", "9999"));
-        allUsers.add(new User("jjjj", "0000"));
+        allUsers.add(new User("aaaa", "1111", "갑", "tempURL"));
+        allUsers.add(new User("bbbb", "2222", "을", "tempURL"));
+        allUsers.add(new User("cccc", "3333", "병", "tempURL"));
+        allUsers.add(new User("dddd", "4444", "정", "tempURL"));
+        allUsers.add(new User("eeee", "5555", "무", "tempURL"));
+        allUsers.add(new User("ffff", "6666", "기", "tempURL"));
+        allUsers.add(new User("gggg", "7777", "경", "tempURL"));
+        allUsers.add(new User("hhhh", "8888", "신", "tempURL"));
+        allUsers.add(new User("iiii", "9999", "임", "tempURL"));
+        allUsers.add(new User("jjjj", "0000", "계", "tempURL"));
     }
 
 }
