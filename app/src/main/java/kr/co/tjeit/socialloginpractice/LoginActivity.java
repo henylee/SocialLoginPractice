@@ -56,15 +56,11 @@ public class LoginActivity extends BaseActivity {
 //                            아이디도 일치하고, 비밀번호도 일치하므로 로그인 성공 Toast
                             pwOk = true;
 
-                            ContextUtil.setUserId(mContext, idEdt.getText().toString());
-                            ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
-
-//                            사용자 이름 설정, 프사 경로 설정.
-
-                            ContextUtil.setUserName(mContext, user.getName());
-                            ContextUtil.setUserProfileUrl(mContext, user.getProfileURL());
-
-
+                            ContextUtil.login(mContext,
+                                    user.getUserId(),
+                                    user.getPassword(),
+                                    user.getName(),
+                                    user.getProfileURL());
 
                         }
                     }

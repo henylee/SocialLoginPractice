@@ -60,6 +60,23 @@ public class ContextUtil {
         return pref.getString(USER_PROFILE_URL, "");
     }
 
+    public static void login(Context context, String id, String pw, String name, String url) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
 
+        pref.edit().putString(USER_ID, id).commit();
+        pref.edit().putString(USER_PW, pw).commit();
+        pref.edit().putString(USER_NAME, name).commit();
+        pref.edit().putString(USER_PROFILE_URL, url).commit();
+    }
+
+    public static void logout(Context context) {
+        SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+
+        pref.edit().putString(USER_ID, "").commit();
+        pref.edit().putString(USER_PW, "").commit();
+        pref.edit().putString(USER_NAME, "").commit();
+        pref.edit().putString(USER_PROFILE_URL, "").commit();
+
+    }
 
 }

@@ -33,6 +33,10 @@ public class MainActivity extends BaseActivity {
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                로그아웃할때, 사용자 정보를 제거
+                ContextUtil.logout(mContext);
+
                 Intent intent = new Intent(mContext, LoginActivity.class);
                 startActivity(intent);
                 finish();
