@@ -7,6 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
 import kr.co.tjeit.socialloginpractice.data.User;
 import kr.co.tjeit.socialloginpractice.util.ContextUtil;
 import kr.co.tjeit.socialloginpractice.util.GlobalData;
@@ -16,6 +22,10 @@ public class LoginActivity extends BaseActivity {
     private android.widget.EditText idEdt;
     private android.widget.EditText pwEdt;
     private android.widget.Button loginBtn;
+
+    CallbackManager callbackManager;
+    private com.facebook.login.widget.LoginButton fbLoginBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +103,43 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+//        로그인 처리가 완료되면, 우리 앱에서도 반영하기 위해
+//        콜백을 만들어 등록하는 과정.
+//        페이스북 문서 따라함.
+        callbackManager = CallbackManager.Factory.create();
+        fbLoginBtn.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+
+
         idEdt.setText(ContextUtil.getUserId(mContext));
         pwEdt.setText(ContextUtil.getUserPw(mContext));
     }
 
+//    페이스북 로그인 화면을 갔다가 돌아오면 콜백매니저가 자동으로 처리할 수 있도록 코딩
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
     @Override
     public void bindViews() {
+        this.fbLoginBtn = (LoginButton) findViewById(R.id.fbLoginBtn);
         this.loginBtn = (Button) findViewById(R.id.loginBtn);
         this.pwEdt = (EditText) findViewById(R.id.pwEdt);
         this.idEdt = (EditText) findViewById(R.id.idEdt);
