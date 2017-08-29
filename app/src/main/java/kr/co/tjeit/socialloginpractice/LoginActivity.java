@@ -59,7 +59,12 @@ public class LoginActivity extends BaseActivity {
                             ContextUtil.setUserId(mContext, idEdt.getText().toString());
                             ContextUtil.setUserPw(mContext, pwEdt.getText().toString());
 
-//                            사용자 이름 설정
+//                            사용자 이름 설정, 프사 경로 설정.
+
+                            ContextUtil.setUserName(mContext, user.getName());
+                            ContextUtil.setUserProfileUrl(mContext, user.getProfileURL());
+
+
 
                         }
                     }

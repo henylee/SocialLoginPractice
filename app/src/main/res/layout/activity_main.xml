@@ -9,6 +9,7 @@
     tools:context="kr.co.tjeit.socialloginpractice.MainActivity">
 
     <ImageView
+        android:id="@+id/profileImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@mipmap/ic_launcher"/>
@@ -28,6 +29,7 @@
         android:text="비밀번호가 출력됩니다."/>
 
     <TextView
+        android:id="@+id/nameTxt"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
